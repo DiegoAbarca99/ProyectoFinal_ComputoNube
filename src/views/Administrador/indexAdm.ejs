@@ -1,0 +1,113 @@
+
+<%- include('../partials/_heater') %>
+
+<%- include('../partials/Administrador/_heater') %>
+
+
+
+<!--INICIO-->
+<div class="hero vh-100 d-flex align-items-center" id="inicio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 mx-auto text-center">
+          <h1 class="display-4 text-white">App-web-Inventario</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--OFERTAS-->
+  <section id="ofertas" class="bg-light">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-md-8 mx-auto text-center">
+          <h1>Productos actualmente presentes en inventario</h1>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+            aspernatur voluptates quod veritatis mollitia dolore recusandae
+            ipsum inventore, iste ullam?</p>
+        </div>
+      </div>
+
+
+
+<div class="container p-4 ">
+    <div class="row">
+        <div class="card-columns">
+
+            <% images.forEach(function (image) { %>
+
+            <div class="card animated fadeInDown">
+                <img src="<%= image.path %>" class="card-img-top" alt="<%= image.filename %>">
+                <div class="card-body">
+                    <h5 class="card-title">Titulo: <%= image.title %></h5>
+                    <p class="card-text">Descripcion:<%= image.description %></p>
+                    <p><%= format(image.created_at) %></p>
+                    <a href="/image/<%= image._id %>" class="btn btn-primary">
+                       View 
+                    </a>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+</section>
+<!--Contactanos-->
+<section class="row w-100 py-0 text-white" id="contactanos">
+  <div class="col-lg-6 py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="container mt-4  ">
+                <div class="jumbotron contenedor">
+                    <h1 class="display-4">Bienvenido</h1>
+                    <p class="lead">Esta es una APP-WEB que ayuda a efectuar tareas de gestión particularmente útiles en tiendas convecionales, para su elaboración se uso NodeS y mongoDB.</p>
+                    <hr class="my-4">
+                    <p>Comienza a gestionar tu negocio.</p>
+                    <a class="btn btn-dark btn-lg" href="about.ejs" role="button">Sobre nosotros</a>
+                  </div>
+            </div>
+        
+          <h1>Contáctanos</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+            deleniti dolore aliquid, iure dolorem maxime.</p>
+
+          <div class="contactanos d-flex mt-5">
+            <div class="iconbox me-4">
+              <i class='bx bx-mobile'></i>
+            </div>
+            <div>
+              <h5>Telefono</h5>
+              <p>445-111-1111</p>
+            </div>
+          </div>
+
+          <div class="contactanos d-flex">
+            <div class="iconbox me-2">
+              <i class='bx bx-mail-send'></i>
+            </div>
+            <div>
+              <h5>Correo</h5>
+              <p>usuarioa@gmail.com</p>
+            </div>
+          </div>
+         
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5 py-4">
+    <form class='contacto'>
+        <div><label>Tu Nombre:</label><input type='text' value=''></div>
+        <div><label>Tu Email:</label><input type='text' value=''></div>
+        <div><label>Asunto:</label><input type='text' value=''></div>
+        <div><label>Mensaje:</label><textarea rows='4'></textarea></div>
+        <div><input type='submit' value='Envia Mensaje'></div>
+    </form>
+  </div>
+</section>
+  
+<%- include('../partials/_footer') %>

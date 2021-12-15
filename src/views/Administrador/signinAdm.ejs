@@ -1,0 +1,57 @@
+
+
+<%- include('../partials/_heater') %>
+<%- include('../partials/mensajes/_mensajesSignup') %>
+
+
+<a href="../index.ejs"><i class="fa-solid fa-arrow-left icono-exit"></i>Regresar</a>
+<div class="container">
+
+ 
+     
+    <h2 class="bs-gray-dark mt text-white text-uppercase text-center ">Ingresar Sesión</h2>
+
+
+     <div class="row container-login2 ">
+      <div class="col-md-4 ">
+        <div class="card bg-primario login-contenido ">
+          <div class="card-body ">
+            
+            <form action="/ingresar" method="POST">
+              <div class="form-group">
+                  <label for="email">Introduzca su email</label>
+                <input type="email" name="email" placeholder="Email" class="form-control mb-3">
+              </div>
+
+              <div class="form-group">
+                  <label for="password">Introduzca su contraseña</label>
+                <input type="password" name="password" placeholder="Password" class="form-control mb-3">
+              </div> 
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-dark mb-3 btn-lg boton">Acceder </button>
+              </div>
+
+              <p class="text-center">¿No tienes cuenta?<a href="./signupAdm.ejs"> <span class="text-weight-bold text-white">Registrate</span></a> </p>
+              
+              
+            </form>
+            
+          </div>
+        </div>
+
+
+          
+
+
+      </div>
+  
+     
+     
+     </div>
+
+    
+</div>
+
+
+
+<%- include('../partials/_footer') %>

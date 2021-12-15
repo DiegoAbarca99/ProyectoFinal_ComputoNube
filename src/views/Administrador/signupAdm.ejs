@@ -1,0 +1,65 @@
+
+<%- include('../partials/_heater') %>
+
+<% if(typeof validaciones != 'undefined') { %>
+  <% validaciones.forEach( (validacion) => {  %> 
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong><%= validacion.msg %></strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <% }) %>
+<% } %> 
+
+<%- include('../partials/mensajes/_mensajesSignup') %>
+
+<a href="../index.ejs"><i class="fa-solid fa-arrow-left icono-exit"></i>Regresar</a>
+<div class="container">
+
+  
+     
+    <h2 class="bs-gray-dark mt text-white text-uppercase text-center">Registrarse</h2>
+
+     <div class="row container-login2">
+      <div class="col-md-4">
+        <div class="card bg-primario login-contenido  ">
+          <div class="card-body ">
+            
+            <form action="/registrarse" method="POST">
+                <div class="form-group">
+                    <label for="email">Introduzca su email</label>
+                    <input type="email" name="email" placeholder="Email" class="form-control mb-3" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Introduzca su contraseña</label>
+                    <input type="password" name="password" placeholder="Password" class="form-control mb-3" value="<% if(typeof valores != 'undefined') { %><%= valores.password %><%}%>" required>
+                  </div>
+
+           
+
+
+
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-dark mb-3" class="fal fa-user-plus">Registrarse</button>
+                    
+                  </div>    
+                          
+                  <p class="text-center"><a href="signinAdm.ejs"> <span class="text-weight-bold text-white">Ya tengo una cuenta</span></a> </p>
+            </form>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      
+      
+      
+     
+     </div>
+      
+
+    
+</div>
+
+
+<%- include('../partials/_footer') %>
